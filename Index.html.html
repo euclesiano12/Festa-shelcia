@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Festa de Shelcia José Luís</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Fredoka', sans-serif;
+    text-align: center;
+    color: white;
+    overflow-x: hidden;
+    background: linear-gradient(-45deg, #ff0080, #ff8c00, #40e0d0, #ff00ff);
+    background-size: 400% 400%;
+    animation: gradientBG 10s ease infinite;
+}
+
+@keyframes gradientBG {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+}
+
+.container {
+    padding: 40px 20px;
+}
+
+h1 {
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 22px;
+    margin-bottom: 30px;
+}
+
+.card {
+    background: rgba(0,0,0,0.6);
+    max-width: 700px;
+    margin: auto;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 0 25px rgba(255,255,255,0.5);
+}
+
+.section-title {
+    font-size: 26px;
+    margin-top: 20px;
+    color: #ffd700;
+}
+
+.countdown {
+    font-size: 24px;
+    margin: 15px 0;
+    font-weight: bold;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    margin: 10px 0;
+    font-size: 18px;
+}
+
+.footer {
+    margin-top: 30px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.link-box {
+    margin-top: 25px;
+}
+
+.link-box a {
+    display: inline-block;
+    padding: 12px 20px;
+    background: #ffd700;
+    color: black;
+    text-decoration: none;
+    border-radius: 12px;
+    font-weight: bold;
+}
+
+.link-box a:hover {
+    transform: scale(1.05);
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>🎉 Vem Pular Comigo! 🎉</h1>
+    <div class="subtitle">Aniversário de Shelcia José Luís</div>
+
+    <div class="card">
+
+        <div class="section-title">📅 Data & Hora</div>
+        <p>23 de Fevereiro de 2026</p>
+        <p>⏰ 18h00</p>
+
+        <div class="section-title">⏳ Contagem Regressiva</div>
+        <div id="countdown" class="countdown"></div>
+
+        <div class="section-title">📍 Local</div>
+        <p>Resort Galaxy</p>
+        <p>Luanda Sul</p>
+
+        <div class="section-title">🎁 Sugestões de Presentes</div>
+        <ul>
+            <li>💖 Conjunto de sandália e pasta</li>
+            <li>💍 Acessórios em prata</li>
+            <li>👟 Um par de tênis</li>
+            <li>🧥 Americana</li>
+            <li>🛍 Kit Skala (shampoo, condicionador e creme)</li>
+            <li>📱 iPhone 12 Pro Max</li>
+        </ul>
+
+        <div class="section-title">🔗 Link do Convite</div>
+        <div class="link-box">
+            <!-- Substitua o link abaixo pelo link real onde este convite estará hospedado -->
+            <a href="https://seu-link-do-convite.com" target="_blank">
+                Abrir Convite Online
+            </a>
+        </div>
+
+    </div>
+
+    <div class="footer">
+        🎊 Sua presença é o melhor presente! 🎊
+    </div>
+
+</div>
+
+<script>
+var countDownDate = new Date("Feb 23, 2026 18:00:00").getTime();
+
+var x = setInterval(function() {
+
+  var now = new Date().getTime();
+  var distance = countDownDate - now;
+
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  document.getElementById("countdown").innerHTML =
+  days + " dias 🎉 " + hours + "h " + minutes + "m " + seconds + "s ";
+
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("countdown").innerHTML = "🎊 A FESTA COMEÇOU! 🎊";
+  }
+
+}, 1000);
+</script>
+
+</body>
+</html>
+
